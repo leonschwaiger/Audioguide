@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Audioguide Schwaiger Leon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!--Icon funktioniert immer, wenn er auf oberster Ebene liegt.-->
+    <link rel="shortcut icon"  href="audioguide/images/headphones.svg">
+	
+  <style>
+
+  body {
+      font-family: 'Poppins', sans-serif;
+      color: #777;
+  }
+  h3 {
+      margin: 10px 0 30px 0;
+      letter-spacing: 5px;      
+      font-size: 20px;
+      color: #111;
+  }
+  h4 {
+	  margin: 10px 0 30px 0;
+	  letter spacing: 4px;
+	  font-size: 10px;
+	  color: #111
+  }
+  h5 {
+    font-size: 16px;
+	
+}
+   h6 {
+	font-family: 'Poppins', sans-serif;
+	font-size: 25px;
+	letter-spacing: 4px;
+}
+   h6a {
+	font-family: 'Poppins', sans-serif;
+	font-size: 25px;
+	letter-spacing: 4px;
+	color: #B3B1B1;
+}
+   h7  {
+	font-family: 'Mitr', sans-serif;
+	text-align: center;
+	font-size: 17px;
+	letter-spacing: 3px;
+}
+   h8{
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 2px;
+	color: #878787;
+}
+  .container {
+      padding: 80px 120px;
+  }
+  .container1 {
+	padding: 90px 200px; 
+}
+  .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+  .person:hover {
+      border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+      -webkit-filter: grayscale(90%);
+      filter: grayscale(90%); /* make all photos black and white */ 
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+  }
+
+  .carousel-caption h3 {
+      color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+      background: #2d2d30;
+      color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail p {
+      margin-top: 15px;
+      color: #555;
+  }
+  .btn {
+	  font-family: 'Poppins', sans-serif;
+      padding: 10px 20px;
+      background-color: #2d2d30;
+      color: #f1f1f1;
+      border-radius: 1px;
+	  border: 1px solid #FCFCFC;
+      transition: .2s;
+  }
+  .btn hover, .btn:focus {
+	  font-family: 'Poppins', sans-serif;
+      border: 1px solid #FCFCFC;
+      background-color: #2d2d30;
+      color: #FFFFFF;
+  }
+  .modal-header, h4, .close {
+      background-color: #333;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header, .modal-body {
+      padding: 40px 50px;
+  }
+  .nav-tabs li a {
+      color: #777;
+  }
+  #googleMap {
+      width: 100%;
+      height: 400px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+  }  
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #2d2d30;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 1px;
+      opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+      color: #fff !important;
+  }
+  .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #3E3E3E !important;
+  }
+  .dropdown-menu li a {
+      color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+      background-color: red !important;
+  }
+
+  footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 32px;
+  }
+  footer a {
+      color: #f5f5f5;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }  
+  .form-control {
+      border-radius: 0;
+  }
+  textarea {
+      resize: none;
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+	  <ul class="nav navbar-nav navbar-left">
+		  
+		  <a href="#myPage">
+		  <li><img src="audioguide/images/Logo_Leon-production.png" alt="Leon's Production" style="margin-left: 60px"></li><br>
+		  </a>
+	  </ul>
+      <ul class="nav navbar-nav navbar-right" style="font-family: 'Poppins', sans-serif; font-size: 15px; margin-right: 20px">
+        <li><a href="https://www.hblw-saalfelden.at/extern/komd4_audioguide2021">HOME</a></li>
+		  
+		  
+		<li><a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">STATIONEN
+		  	
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+  			<path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+			</svg>
+			</a>
+			
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #2d2d30">
+				
+				<a class="dropdown-item" href="#Bahnhof" style="margin-left: 20px">		1. Bahnhof</a><br>
+				<a class="dropdown-item" href="#Gemeinde" style="margin-left: 20px">	2. Gemeinde</a><br>
+				<a class="dropdown-item" href="#Kirche" style="margin-left: 20px">		3. Kirche</a><br>
+				<a class="dropdown-item" href="#Lukashansl" style="margin-left: 20px">	4. Lukashansl</a><br>
+				<a class="dropdown-item" href="#Fischhorn" style="margin-left: 20px">	5. Fischhorn</a><br>
+				<a class="dropdown-item" href="#Kino" style="margin-left: 20px">		6. Dieselkino</a><br>
+				<a class="dropdown-item" href="#Woferlgut" style="margin-left: 20px">	7. Woferlgut</a><br>
+				<a class="dropdown-item" href="#Kohlschnait" style="margin-left: 20px">	8. Kohlschnait</a><br>
+			</div>
+		</li> 
+		  
+		<li><a href="#impressum">IMPRESSUM</a></li>
+		<li><a href="#Map">MAP</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="audioguide/images/bruck_marienkirche.jpg" alt="Marienkirche">
+        <div class="carousel-caption">
+          <h3 style="font-family: 'Farro', sans-serif; letter-spacing: 2px">Marienkirche</h3>
+        </div>      
+      </div>
+		
+	  <div class="item">
+        <img src="audioguide/images/bruck_schloss_fischhorn.jpg" alt="Schloss Firschhorn">
+        <div class="carousel-caption">
+          <h3 style="font-family: 'Farro', sans-serif; letter-spacing: 2px">Schloss Fischhorn</h3>
+        </div>      
+      </div>
+		
+	  <div class="item">
+        <img src="audioguide/images/bruck_dieselkino.jpg" alt="Dieselkino Bruck">
+        <div class="carousel-caption">
+          <h3 style="font-family: 'Farro', sans-serif; letter-spacing: 2px">Dieselkino</h3>
+        </div>      
+      </div>
+		
+    </div>
+	
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Container -->
+<div id="audioguide" class="container text-center" style="text-align: justify-all">
+	
+	<p><h6>EIN<a style="color: #292929">BLICK</a> IN MEINE HEIMAT</h6></p><br>
+	
+	<p><h7>Setzen Sie sich Ihre Kopfhörer auf und hören Sie sich meine Tour über die Dorfgemeinde 'Bruck an der Großglocknerstraße' an. Es gibt natürlich viel mehr Sehenswertes, aber die gehören zu meinen favourites.</h7></p>
+	<p><h7>Viel Spaß!</h7></p>
+	<br><br><br>
+		<audio controls>
+  			<source src="audioguide/audiofiles/Einleitung.mp3" type="audio/mpeg">
+		</audio>
+<br> 
+</div>
+
+<br>	
+<div class="bg-1" id="Bahnhof">	
+	
+	
+ <div id="content" class="container1">
+	 
+	 <div class="row featurette">
+		 
+        <div class="col-md-5" style="=margin-top: 3%;">
+			
+			<div id="tinySlider" class="carousel slide" data-ride="carousel" data-interval="10000">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+				  <li data-target="#tinySlider" data-slide-to="0" class="active"></li>
+				  <li data-target="#tinySlider" data-slide-to="1"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+				  <div class="item active">
+					<img src="audioguide/images/Bahnhof1.jpeg" alt="Bahnhof"  style="filter: grayscale(0%)">     
+				  </div>
+
+				  <div class="item">
+					<img src="audioguide/images/Bahnhof2.jpeg" alt="Bahnhof"  style="filter: grayscale(0%)">     
+				  </div>	
+
+				</div>
+
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#tinySlider" role="button" data-slide="prev">
+				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#tinySlider" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+			</div>
+			
+		</div>
+			
+		 
+	 	<div class="col-md-7">
+		 	<div class="card-body">
+              <h6a>Bruck-Fusch Bahnhof</h6a><br><br><br>
+				<h8>Wir starten unsere Reise am "Knotenpunkt" der Dorfgemeinde. Vor dem Bahnhof befindet sich ein Café, die Volks- und Hauptschule und das Hotel Gasthof Post. Alle Stationen sind zu Fuß erreichbar.</h8><br><br><br>
+                <audio controls>
+   					<source src="audioguide/audiofiles/Bahnhof.mp3" type="audio/mpeg" />
+				</audio>
+            </div>
+			
+		</div>	 
+		 
+	 </div>
+	 
+	 <br><br><br>
+ <hr id="Gemeinde" class="featurette-divider">
+	 <br><br><br>
+	 
+	 <div class="row featurette">
+		
+	 	<div class="col-md-7">
+		 	<div class="card-body">
+              <h6a>Das Gemeindezentrum</h6a><br><br><br>
+				<h8>Weiß, edel und viel Glas. Der Mittelpunkt des Geschehens. Die Gemeinde hat alles im Blick und im Griff.</h8><br><br><br>
+                <audio controls>
+   					<source src="audioguide/audiofiles/Gemeinde.mp3" type="audio/mpeg" />
+				</audio>
+            </div>
+		</div>	 
+		 
+		 <div class="col-md-5" style="=margin-top: 3%;">
+			 
+			 <div id="tinySlider2" class="carousel slide" data-ride="carousel" data-interval="10000">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+				  <li data-target="#tinySlider2" data-slide-to="0" class="active"></li>
+				  <li data-target="#tinySlider2" data-slide-to="1"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+				  <div class="item active">
+					<img src="audioguide/images/Gemeinde2.jpeg" alt="Gemeinde"  style="filter: grayscale(0%)">     
+				  </div>
+
+				  <div class="item">
+					<img src="audioguide/images/Gemeinde1.jpeg" alt="Gemeinde"  style="filter: grayscale(0%)">     
+				  </div>	
+
+				</div>
+
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#tinySlider2" role="button" data-slide="prev">
+				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#tinySlider2" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+			</div>
+
+		</div>
+		 
+	 </div>
+
+	<br><br><br>	 
+ <hr id="Kirche" class="featurette-divider">	 
+	<br><br><br>
+	 
+	 <div class="row featurette">
+		 
+        <div class="col-md-5" style="=margin-top: 3%;">
+			
+			<div id="tinySlider3" class="carousel slide" data-ride="carousel" data-interval="10000">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+				  <li data-target="#tinySlider3" data-slide-to="0" class="active"></li>
+				  <li data-target="#tinySlider3" data-slide-to="1"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+				  <div class="item active">
+					<img src="audioguide/images/Kirche2.jpeg" alt="Marienkirche"  style="filter: grayscale(0%)">     
+				  </div>
+
+				  <div class="item">
+					<img src="audioguide/images/Kirche1.jpeg" alt="Marienkirche"  style="filter: grayscale(0%)">     
+				  </div>	
+
+				</div>
+
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#tinySlider3" role="button" data-slide="prev">
+				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#tinySlider3" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+			</div>
+			
+		</div>
+			
+		 
+	 	<div class="col-md-7">
+		 	<div class="card-body">
+              <h6a>Die Marienkirche</h6a><br><br><br>
+				<h8>Hier rede ich über eine unserer Kirchen aus dem 17 Jahrhundert. Wenn Sie mehr erfahren wollen, besuchen Sie doch die offizielle Homepage der Gemeinde.</h8><br><br><br>
+                <audio controls>
+   					<source src="audioguide/audiofiles/Marienkirche.mp3" type="audio/mpeg" />
+				</audio>
+            </div>
+		</div>	 
+		 
+	 </div>
+
+	<br><br><br>
+ <hr id="Lukashansl" class="featurette-divider">
+	<br><br><br>
+		 
+	 <div class="row featurette">
+		
+	 	<div class="col-md-7">
+		 	<div class="card-body">
+              <h6a>Gasthof Lukashansl</h6a><br><br><br>
+				<h8>Gasthof und Sporthotel. Ein großer Werdegang von einer Alm zum Hotel. </h8><br><br><br>
+                <audio controls>
+   					<source src="audioguide/audiofiles/Lukashansl.mp3" type="audio/mpeg" />
+				</audio>
+            </div>
+		</div>	 
+		 
+		 <div class="col-md-5" style="=margin-top: 3%;">
+			 
+			<div id="tinySlider4" class="carousel slide" data-ride="carousel" data-interval="10000">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+				  <li data-target="#tinySlider4" data-slide-to="0" class="active"></li>
+				  <li data-target="#tinySlider4" data-slide-to="1"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+				  <div class="item active">
+					<img src="audioguide/images/Lukashansl2.jpeg" alt="Lukashansl"  style="filter: grayscale(0%)">     
+				  </div>
+
+				  <div class="item">
+					<img src="audioguide/images/Lukashansl1.jpeg" alt="Lukashansl"  style="filter: grayscale(0%)">     
+				  </div>	
+
+				</div>
+
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#tinySlider4" role="button" data-slide="prev">
+				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#tinySlider4" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+				
+			</div>
+			 
+		</div>
+		 
+	 </div>
+	 
+	 <br><br><br>
+ <hr id="Fischhorn" class="featurette-divider">
+	 <br><br><br>
+		 
+	 <div class="row featurette">
+		 
+        <div class="col-md-5" style="=margin-top: 3%;">
+			
+			<div id="tinySlider5" class="carousel slide" data-ride="carousel" data-interval="10000">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+				  <li data-target="#tinySlider5" data-slide-to="0" class="active"></li>
+				  <li data-target="#tinySlider5" data-slide-to="1"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+				  <div class="item active">
+					<img src="audioguide/images/Fischhorn2.jpeg" alt="Fischhorn"  style="filter: grayscale(0%)">     
+				  </div>
+
+				  <div class="item">
+					<img src="audioguide/images/Fischhorn1.jpeg" alt="Fischhorn"  style="filter: grayscale(0%)">     
+				  </div>	
+
+				</div>
+
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#tinySlider5" role="button" data-slide="prev">
+				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#tinySlider5" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+				
+			</div>
+			
+		</div>
+			
+		 
+	 	<div class="col-md-7">
+		 	<div class="card-body">
+              <h6a>Schloss Fischhorn</h6a><br><br><br>
+				<h8>Das enorme Anwesen ist seit langem unbewohnt, dient aber mit ihren Räumlichenkeiten für diverse Vernissagen und Ausstellungen. Ganz beliebt bei den Einheimischen ist die Krippenausstellung im Winter.</h8><br><br><br>
+                <audio controls>
+   					<source src="audioguide/audiofiles/Dieselkino.mp3" type="audio/mpeg" />
+				</audio>
+            </div>
+		</div>	 
+		 
+	 </div>
+
+	<br><br><br>
+ <hr id="Kino" class="featurette-divider">
+	<br><br><br>
+	 
+	<div class="row featurette">
+		
+	 	<div class="col-md-7">
+		 	<div class="card-body">
+              <h6a>Das Dieselkino</h6a><br><br><br>
+				<h8>Ganz groß und modern. Ein weiterer Standort des großen Franchises nimmt seinen Platz mit 5 Kinosälen in Bruck ein.</h8><br><br><br>
+                <audio controls>
+   					<source src="audioguide/audiofiles/Dieselkino.mp3" type="audio/mpeg" />
+				</audio>
+            </div>
+		</div>	 
+		 
+		 <div class="col-md-5" style="=margin-top: 3%;">
+			
+			 <div id="tinySlider6" class="carousel slide" data-ride="carousel" data-interval="10000">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+				  <li data-target="#tinySlider6" data-slide-to="0" class="active"></li>
+				  <li data-target="#tinySlider6" data-slide-to="1"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+				  <div class="item active">
+					<img src="audioguide/images/Dieselkino1.jpeg" alt="Kino"  style="filter: grayscale(0%)">     
+				  </div>
+
+				  <div class="item">
+					<img src="audioguide/images/Dieselkino2.jpeg" alt="Kino"  style="filter: grayscale(0%)">     
+				  </div>	
+
+				</div>
+
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#tinySlider6" role="button" data-slide="prev">
+				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#tinySlider6" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+			</div>
+			 
+		</div>
+		 
+	 </div>
+	 
+	 <br><br><br>
+ <hr id="Woferlgut" class="featurette-divider">
+	 <br><br><br>	 
+		 
+	 <div class="row featurette">
+		 
+        <div class="col-md-5" style="=margin-top: 3%;">
+			
+			<div id="tinySlider7" class="carousel slide" data-ride="carousel" data-interval="10000">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+				  <li data-target="#tinySlider7" data-slide-to="0" class="active"></li>
+				  <li data-target="#tinySlider7" data-slide-to="1"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+				  <div class="item active">
+					<img src="audioguide/images/Woferlgut1.jpeg" alt="Woferlgut"  style="filter: grayscale(20%)">     
+				  </div>
+
+				  <div class="item">
+					<img src="audioguide/images/Woferlgut2.jpeg" alt="Woferlgut"  style="filter: grayscale(20%)">     
+				  </div>	
+
+				</div>
+
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#tinySlider7" role="button" data-slide="prev">
+				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#tinySlider7" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+			</div>
+			
+		</div>
+			
+		 
+	 	<div class="col-md-7">
+		 	<div class="card-body">
+              <h6a>Das Woferlgut</h6a><br><br><br>
+				<h8>4 Sterne, eigener See, 10 Millionen Euro Schwimmbad und riesen Kampingplatz. Luxusreise mit Stil im Woferlgut.</h8><br><br><br>
+                <audio controls>
+   					<source src="audioguide/audiofiles/Woferlgut.mp3" type="audio/mpeg" />
+				</audio>
+            </div>
+		</div>	 
+	 </div>
+	
+	 <br><br><br>
+ <hr id="Kohlschnait" class="featurette-divider">
+	 <br><br><br>
+	 
+	 <div class="row featurette">
+		
+	 	<div class="col-md-7">
+		 	<div class="card-body">
+              <h6a>Rodelbahn Kohlschnait</h6a><br><br><br>
+				<h8>Kohlschnait hat viel mehr zu bieten als eine Rodelbahn. Berg-Urlaub im Naturschutzgebiet und kulinarische Erlebnisse in Bruck.</h8><br><br><br>
+                <audio controls>
+   					<source src="audioguide/audiofiles/Kohlschnait.mp3" type="audio/mpeg" />
+				</audio>
+            </div>
+		</div>	 
+		 
+		 <div class="col-md-5" style="=margin-top: 3%;">
+			
+			 <div id="tinySlider8" class="carousel slide" data-ride="carousel" data-interval="10000">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+				  <li data-target="#tinySlider8" data-slide-to="0" class="active"></li>
+				  <li data-target="#tinySlider8" data-slide-to="1"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+				  <div class="item active">
+					<img src="audioguide/images/Kohlschnait1.jpeg" alt="Kohlschnait"  style="filter: grayscale(20%)">     
+				  </div>
+
+				  <div class="item">
+					<img src="audioguide/images/Kohlschnait2.jpeg" alt="Kohlschnati"  style="filter: grayscale(20%)">     
+				  </div>	
+
+				</div>
+
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#tinySlider8" role="button" data-slide="prev">
+				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#tinySlider8" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="opacity: 50%"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+			</div>
+			 
+		</div>
+		 
+	 </div>
+        
+ </div>
+ 
+ <br>
+	<hr id="Abschluss" class="featurette-divider">
+	
+<div class="container" style="margin-right: auto">
+	
+ <br>
+	<h6 class="text-center" style="container; color: #D6D4D4">Danke fürs Zuhören!</h6>
+	<p style="color: #696868"><h7>Jetzt haben Sie etwas über meinen Heimatort erfahren. Ich hoffe ich habe Ihnen damit genüge getan. Wenn Sie noch mehr erfahren wollen, besuchen Sie doch einfach die WebSite meiner Gemeinde. Vielleicht überlegen Sie das nächste Mal Urlaub in Bruck zu machen!</h7><br><br><br></p>
+	<audio controls style="margin-left: 310px">
+   		<source src="audioguide/audiofiles/Schluss.mp3" type="audio/mpeg"/>
+	 </audio>
+ </div>
+</div>
+	
+<br>		
+	
+<!-- Add OpenStreetMap -->
+
+<div class="container" id="Map" style=" margin-left: 140px;">
+<h2>Anfahrtskarte</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5413.081599230409!2d12.828978992281373!3d47.28423039606837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47771c76cdfbd42f%3A0x7912af01fb7eee6!2sBruck-Fusch%20Bahnhof!5e0!3m2!1sde!2sat!4v1621797877154!5m2!1sde!2sat" width="1160" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=47.2841&amp;mlon=12.8284#map=15/47.2841/12.8284">Größere Karte anzeigen</a></small>
+
+</div>
+
+<!-- Footer -->
+<footer class="text-center">
+	
+<a class="bi bi-caret-up" href="#myPage" data-toggle="tooltip" title="to top">
+	<svg xmlns="http://www.w3.org/2000/svg" href="#myPage" data-toggle="tooltip" title="to the top" width="25" height="25" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16" style="margin-right: 3px">
+ 		 <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+	</svg>
+</a><br>
+	
+	<div>
+		<p><h2 style="font-size: 25px; font-family: 'Raleway', sans-serif;">Created by</h2><h2 style="color: gray"> Leon Schwaiger</h2></p>
+	</div>
+	
+	<br>
+	
+<a href="https://www.instagram.com/xxleon_schwaigerxx/" title="Instagram">
+	<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="zoom" viewBox="0 0 16 16">
+	  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+	</svg>
+</a>
+
+<a href="https://www.facebook.com/leon.schwaiger.969" titel="Facebook">
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+</svg>
+</a><br><br>
+
+<!-- Impressum -->
+	
+
+  <button id="impressum" type="button" class="btn btn-secondary" data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Impressum</button>
+
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+        <div class="container" style="margin-top:0; padding-top:0;">
+ 
+   
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Anschrift</a></li>
+    <li><a data-toggle="tab" href="#menu1">Haftung</a></li>
+    <li><a data-toggle="tab" href="#menu2">Urheberrecht</a></li>  
+	<li><a data-toggle="tab" href="#menu3">Bildernachweis</a></li>
+	<li><a data-toggle="tab" href="#menu4">Google Analytics</a></li>
+  </ul>
+	
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h2>Informationspflicht</h2>
+      <p>laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung und Offenlegungspflicht laut §25
+		Mediengesetz.
+		Max Mustermann
+		Musterstrasse 1, Stiege 1 Tür 1,
+		1234 Musterhausen,
+		Österreich
+		Tel.: 01234/56789
+		Fax: 01234/56789 -0
+		E-Mail: office@mus terfirma.com</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h2>Haftung für Inhalte dieser Webseite</h2>
+      <p>Unsere Webseite enthält Links zu anderen Webseiten für deren Inhalt wir nicht verantwortlich sind. Haftung für verlinkte Websites besteht
+		laut § 17 ECG für uns nicht, da wir keine Kenntnis rechtswidriger Tätigkeiten hatten und haben, uns solche Rechtswidrigkeiten auch bisher
+		nicht aufgefallen sind und wir Links sofort entfernen würden, wenn uns Rechtswidrigkeiten bekannt werden.
+		Wenn Ihnen rechtswidrige Links auf unserer Website auffallen, bitte wir Sie uns zu kontaktieren, Sie finden die Kontaktdaten im Impressum.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h2>Urheberrechtshinweis</h2>
+      <p>Alle Inhalte dieser Webseite (Bilder, Fotos, Texte, Videos) unterliegen dem Urheberrecht. Falls notwendig, werden wir die unerlaubte Nutzung
+		von Teilen der Inhalte unserer Seite rechtlich verfolgen.
+		Sollten Sie auf dieser Webseite Inhalte finden, die das Urheberrecht verletzen, bitten wir Sie uns zu kontaktieren.</p>
+    </div>
+	<div id="menu3" class="tab-pane fade">
+      <h2>Bildernachweis</h2>
+      <p>Die Bilder, Fotos und Grafiken auf dieser Webseite sind urheberrechtlich geschützt.
+		Die Bilderrechte liegen bei den folgenden Fotografen und Unternehmen:</p>
+    </div>
+	<div id="menu4" class="tab-pane fade">
+      <h2>Google Analytics</h2>
+      <p>Wir verwenden auf dieser Website Google Analytics der Firma Google LLC (1600 Amphitheatre Parkway Mountain View, CA 94043, USA)
+		um Besucherdaten statistisch auszuwerten. Dabei verwendet Google Analytics zielorientierte Cookies.Nähere Informationen zu Nutzungsbedingungen und Datenschutz finden Sie unter http://www.google.com/analytics/terms/de.html bzw.
+		unter https://support.google.com/analytics/answer/6004245?hl=de.
+		<h5><b>Pseudonymisierung</b></h5>
+		Unser Anliegen im Sinne der DSGVO ist die Verbesserung unseres Angebotes und unseres Webauftritts. Da uns die Privatsphäre unserer
+		Nutzer wichtig ist, werden die Nutzerdaten pseudonymisiert. Die Datenverarbeitung erfolgt auf Basis der gesetzlichen Bestimmungen des § 96
+		Abs 3 TKG sowie des Art 6 EU-DSGVO Abs 1 lit a (Einwilligung) und/oder f (berechtigtes Interesse) der DSGVO.
+		</p>
+		
+		<button class="btn btn-primary" onclick="gaOptout();">Keine Google Analytics!</button>
+	<script>
+	var gaProperty = 'UA-129124671-1';
+	var disableStr = 'ga-disable-' + gaProperty;
+	if (document.cookie.indexOf(disableStr + '=true') > -1) {
+	  window[disableStr] = true;
+	}
+	function gaOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	</script>
+	</div> 
+  </div>
+
+	
+	
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>	
+
+<br>
+<p style="color: darkgrey; opacity: 50%">Copyright © 2021 All Rights Reserved by Leon Schwaiger</p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+   
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+    });
+  });
+})
+</script>
+
+</body>
+</html>
